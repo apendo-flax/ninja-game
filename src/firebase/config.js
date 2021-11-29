@@ -1,7 +1,3 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
-import "./assets/Global.css";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
@@ -17,6 +13,12 @@ const firebaseConfig = {
 
 //init firebase
 firebase.initializeApp(firebaseConfig);
-let db = firebase.firestore();
 
-createApp(App).use(router).mount("#app");
+//init firestore
+const projectFirestore = firebase.firestore();
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+
+//init firebase auth
+const projectAuth = firebase.auth();
+
+export default { projectFirestore, timestamp, projectAuth };
