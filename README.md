@@ -1,5 +1,7 @@
 # ninja-game
 
+a small training project in vue
+
 ## Project setup
 ```
 npm install
